@@ -1,0 +1,105 @@
+{
+  "workflow": {
+    "unique_name": "definition_workflow_01FZQ0U7QY08I6QDTHMm27bujQQOYzvRdSD",
+    "name": "Prime Infra Query Sample",
+    "title": "Prime Infra Query Sample",
+    "type": "generic.workflow",
+    "base_type": "workflow",
+    "variables": null,
+    "properties": {
+      "atomic": {
+        "is_atomic": false
+      },
+      "delete_workflow_instance": false,
+      "display_name": "Prime Infra Query Sample",
+      "runtime_user": {
+        "override_target_runtime_user": false,
+        "specify_on_workflow_start": false,
+        "target_default": true
+      },
+      "target": {
+        "target_type": "web-service.endpoint",
+        "target_id": "definition_target_01FZQ0RWGSTAJ0uCTCFhPpgRp9PUqUxUcM8",
+        "execute_on_workflow_target": true
+      }
+    },
+    "object_type": "definition_workflow",
+    "actions": [
+      {
+        "unique_name": "definition_activity_01FZQ1X8IJLY22q3svYVs6O9iuac352USeC",
+        "name": "HTTP Request",
+        "title": "Get Clients",
+        "type": "web-service.http_request",
+        "base_type": "activity",
+        "properties": {
+          "action_timeout": 180,
+          "allow_auto_redirect": true,
+          "continue_on_error_status_code": false,
+          "continue_on_failure": false,
+          "display_name": "Get Clients",
+          "method": "GET",
+          "relative_url": "/webacs/api/v3/data/Clients",
+          "runtime_user": {
+            "override_target_runtime_user": false,
+            "target_default": true
+          },
+          "skip_execution": false,
+          "target": {
+            "use_workflow_target": true
+          }
+        },
+        "object_type": "definition_activity"
+      }
+    ],
+    "categories": [
+      "category_01FA0UMWQE5IA1wPdcsb0VBxBnSZChdhyvc"
+    ]
+  },
+  "categories": {
+    "category_01FA0UMWQE5IA1wPdcsb0VBxBnSZChdhyvc": {
+      "unique_name": "category_01FA0UMWQE5IA1wPdcsb0VBxBnSZChdhyvc",
+      "name": "mattbake",
+      "title": "mattbake",
+      "type": "basic.category",
+      "base_type": "category",
+      "description": "AO Bootcamp Category",
+      "category_type": "custom",
+      "object_type": "category"
+    }
+  },
+  "targets": {
+    "definition_target_01FZQ0RWGSTAJ0uCTCFhPpgRp9PUqUxUcM8": {
+      "unique_name": "definition_target_01FZQ0RWGSTAJ0uCTCFhPpgRp9PUqUxUcM8",
+      "name": "Prime Infrastructure Sandbox",
+      "title": "Prime Infrastructure Sandbox",
+      "type": "web-service.endpoint",
+      "base_type": "target",
+      "object_type": "definition_target",
+      "properties": {
+        "default_runtime_user_id": "definition_runtime_user_01FZPZQ9YUCY64JoX6t3KSCqcEHDTRWOX6g",
+        "disable_certificate_validation": true,
+        "display_name": "Prime Infrastructure Sandbox",
+        "host": "primeinfrasandbox.cisco.com",
+        "no_runtime_user": false,
+        "port": 443,
+        "protocol": "https"
+      }
+    }
+  },
+  "runtime_users": {
+    "definition_runtime_user_01FZPZQ9YUCY64JoX6t3KSCqcEHDTRWOX6g": {
+      "unique_name": "definition_runtime_user_01FZPZQ9YUCY64JoX6t3KSCqcEHDTRWOX6g",
+      "name": "DevNet User",
+      "title": "DevNet User",
+      "type": "runtime_user.web-service_basic_credentials",
+      "base_type": "runtime_user",
+      "object_type": "definition_runtime_user",
+      "properties": {
+        "auth_option": "*****",
+        "basic_password": "*****",
+        "basic_username": "*****",
+        "display_name": "DevNet User"
+      }
+    }
+  }
+}
